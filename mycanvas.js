@@ -1,7 +1,8 @@
 
 const mycanvas = document.getElementById('mycanvas');
-const ctx = mycanvas.getContext('2d');
-const width = 700;
+
+const size = 700
+const width = 900;
 const height = 500;
 
 mycanvas.width = width;
@@ -15,12 +16,12 @@ const notesPerBeat = 4;
 let currentBeat = 0;
 let currentNote = 100;
 
+const trackCentre = {x: size / 2, y: size / 2}
+const trackRadius = 100;
 
-function drawLine(x1, y1, x2, y2, color) {
-    ctx.beginPath();
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 1;
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x2, y2);
-    ctx.stroke();
-}
+
+const ctx = mycanvas.getContext('2d');
+const track = new Track(trackCentre, trackRadius)
+track.draw(ctx);
+
+
