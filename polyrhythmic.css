@@ -1,0 +1,20 @@
+
+
+h1 {
+    font-size: 48px;
+    color: rgb(141, 141, 242); /* Optional: White text color for contrast */
+    text-align: center; /* Center text */
+    justify-items: center;
+}
+
+body {
+    margin: 0; /* Remove default margins */
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    background-color: hwb(200 97% 2%); /* Optional: Dark background for contrast */
+}
+
+canvas {
+    margin-top: 120px; /* Move the canvas slightly down */
+    border: 1px solid #fff; /* Optional: Add a border for visibility */
+}
