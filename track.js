@@ -1,13 +1,14 @@
 
 class Track{
-    constructor(centre, radius){
-        this.centre = centre;
+    constructor(center, radius){
+        this.center = center;
         this.radius = radius;
     }
 
+    // Draw the track circle centered on the canvas
     draw(ctx){
         ctx.beginPath();
-        ctx.arc(this.centre.x, this.centre.y, this.radius, 0, 2 * Math.PI);
+        ctx.arc(this.center.x, this.center.y, this.radius, 0, Math.PI * 2, true);   
         ctx.strokeStyle = "white";
         ctx.stroke();
     }
