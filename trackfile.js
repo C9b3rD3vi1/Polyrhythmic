@@ -5,6 +5,15 @@ class Track {
         this.radius = radius;
     }
 
+    getPosition(offset) {
+        const angle = offset * Math.PI / 180; // Convert degrees to radians
+        return {
+            x: this.center.x + Math.cos(angle) * this.radius,
+            y: this.center.y + Math.sin(angle) * this.radius
+        };
+    }
+
+
     // Draw the track circle centered on the canvas
     draw(ctx) {
         ctx.beginPath();
@@ -13,21 +22,3 @@ class Track {
         ctx.stroke();
     }
 }
-
-const mycanvas = document.getElementById('mycanvas');
-
-// Canvas width and height
-const width = 1000;
-const height = 800;
-mycanvas.width = width;
-mycanvas.height = height;
-
-// Radius and circle center
-const trackCenter = { x: width / 2, y: height / 2 }; // Center the circle
-const trackRadius = 200;
-
-
-// Draw the track circle
-const ctx = mycanvas.getContext('2d');
-const track = new Track(trackCenter, trackRadius);
-track.draw(ctx);
